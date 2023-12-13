@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izulu_v1/src/common/main_weather/today_forcast_icons.dart';
 import 'package:izulu_v1/src/constants/colors.dart';
 import 'package:izulu_v1/src/constants/image_strings.dart';
 
@@ -12,7 +13,6 @@ class mainWeather extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.5,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: bgMidGrey,
@@ -58,11 +58,36 @@ class mainWeather extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: bgLightGrey,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Column(
+                    children: [
+                      Text("Today's Forcast"),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          TodayFrocastIcon(
+                            cloudIcon: downpour,
+                            forcastTime: "00:00 - 08:00",
+                          ),
+                          TodayFrocastIcon(
+                            cloudIcon: cloudy,
+                            forcastTime: "08:00 - 16:00",
+                          ),
+                          TodayFrocastIcon(
+                            cloudIcon: sun,
+                            forcastTime: "16:00 - 24:00",
+                          ),
+                        ],
+                      )
+                    ],
+                  )),
+            ),
 //--//
-            Container(
-              color: bgLightGrey,
-              child: Text("Today's Forcast"),
-            )
           ],
         ),
       ),
