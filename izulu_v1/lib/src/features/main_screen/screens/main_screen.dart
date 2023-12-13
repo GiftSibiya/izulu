@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:izulu_v1/src/common/app_header.dart';
+import 'package:izulu_v1/src/common/main_weather.dart';
+import 'package:izulu_v1/src/constants/colors.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -6,10 +9,11 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text(
-          "@b0b0.sa",
-          style: TextStyle(fontSize: 30),
+      backgroundColor: bgDarkGrey,
+      body: SafeArea(
+        child: Column(
+          // ignore: unnecessary_const
+          children: [const appHeader(), mainWeather()],
         ),
       ),
     );
